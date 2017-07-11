@@ -50,7 +50,7 @@ WORKDIR /usr/local/src/carbon
 RUN python ./setup.py install
 
 # install statsd
-RUN git clone https://github.com/tienyuan/statsd.git /opt/statsd
+RUN git clone -b v20170711 --depth 1 https://github.com/tienyuan/statsd.git /opt/statsd
 ADD conf/opt/statsd/config.js /opt/statsd/config.js
 
 # config nginx
